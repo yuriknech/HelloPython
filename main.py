@@ -4,9 +4,10 @@ import time
 from tkinter import *
 from tkinter import messagebox
 
-
-def mbshowinfo():
-    return messagebox.showinfo('Useful Python', 'Вы долго смотрели в монитор, теперь посмотрите в окно')
+def retrywindow():
+    window.withdraw()
+    time.sleep(10)
+    window.deiconify()
 
 
 if __name__ == '__main__':
@@ -168,7 +169,7 @@ if __name__ == '__main__':
     lbl = Label(window, text="Вы долго смотрели в монитор, теперь посмотрите в окно")
     lbl.pack()
     btn = Button(window, text="Retry", width=10,
-                 command=mbshowinfo)
+                 command=retrywindow)
     btn.pack(side=LEFT)
     btn = Button(window, text="Quit", width=10,
                  command=window.destroy)
